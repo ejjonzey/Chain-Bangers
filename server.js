@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const UserController = require('./controllers/user.jsx');
 const app = express();
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/fullstack-jeopardy
@@ -26,8 +27,10 @@ app.get('/', (req,res) => {
   res.sendFile(__dirname + '/client/build/index.html')
 })
 
+app.use('/api/user', UserController);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log("Magic happening on port " + PORT);
 })
+

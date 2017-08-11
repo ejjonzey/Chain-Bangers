@@ -34,6 +34,8 @@ const admin = new User({
     first_name: 'Eric',
     last_name: 'Jonelunas',
     username: 'Ejjonzey',
+    password: "12345",
+    admin: True
 })
 
 Alexander.save().then(()=> console.log("Course Saved!"));
