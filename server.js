@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const UserController = require('./controllers/user.jsx');
 const app = express();
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/fullstack-jeopardy
+mongoose.connect(process.env.MONGODB_URI); 
 
 const connection = mongoose.connection;
 connection.on('connected', () => {
