@@ -8,7 +8,9 @@
         "dev": "concurrently \"nodemon server.js\" \"cd client && yarn start\"",
         "test": "echo \"Error: no test specified\" && exit 1",
         "postinstall": "cd client && yarn install && yarn build"
-
+    },
+    "engines": {
+        "node": "8.2.1"
     },
     "keywords": [],
     "author": "",
