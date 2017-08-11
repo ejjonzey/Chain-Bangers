@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const CommentSchema = mongoose.schema({
+const CommentSchema = mongoose.Schema({
     posterId: String,
     date: {type: Date, default: Date},
     comment: String
 });
 
-const HoleSchema = mongoose.schema({
+const HoleSchema = mongoose.Schema({
     number: Number,
     distance: Number,
     par: Number,
@@ -22,17 +22,18 @@ const CourseSchema = mongoose.Schema({
     image: String,
     description: String,
     comment: [CommentSchema],
-    date_added: Date
+    date_set: Date
 });
 
-const UserSchema = mongoose.schema({
+const UserSchema = mongoose.Schema({
     first_name: String,
     last_name: String,
     user_id: String,
-    user_name: String
+    user_name: String,
+    admin: Boolean,
 });
 
-const DiscSchema = mongoose.schema({
+const DiscSchema = mongoose.Schema({
     brand_name: String,
     line_name: String,
     weight: Number,
@@ -44,16 +45,23 @@ const DiscSchema = mongoose.schema({
 
 CourseSchema.pre('save', function(next){
     let now = new Date();
-    if(!this.date_added){
-        this.date-added = now;
+    if(!this.date_set){
+        this.date_set = now;
     }
     next()
+})
+
+UserSchema.pre('save', function(next){
+    if(!this.admin){
+        this.admin = false;
+    }
+    next();
 })
 
 var CommentModel = mongoose.model('Comment', CommentSchema);
 var CourseModel = mongoose.model('Course', CourseSchema);
 var HoleModel = mongoose.model('Hole', HoleSchema);
-var userModel = mongoose.model('User', UserSchema);
+var UserModel = mongoose.model('User', UserSchema);
 
 module.exports = {
     Comment: CommentModel,

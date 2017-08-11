@@ -39,3 +39,7 @@ const admin = new User({
 Alexander.save().then(()=> console.log("Course Saved!"));
 Redan.save().then(()=> console.log("Course Saved!"));
 EastRoswell.save().then(()=> console.log("Course Saved!"));
+
+admin.save().then(()=> console.log("Admin saved"));
+
+mongoose.connection.close();
