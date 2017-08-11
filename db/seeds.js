@@ -35,7 +35,7 @@ const Admin = new User({
     last_name: 'Jonelunas',
     username: 'Ejjonzey',
     password: "12345",
-    admin: True
+    Admin: True
 })
 
 const Hole = new Hole1({

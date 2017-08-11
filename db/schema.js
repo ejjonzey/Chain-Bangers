@@ -31,7 +31,7 @@ const UserSchema = mongoose.Schema({
     user_id: String,
     username: String,
     password: String,
-    admin: Boolean,
+    Admin: Boolean,
 });
 
 const DiscSchema = mongoose.Schema({
