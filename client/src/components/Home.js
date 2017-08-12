@@ -9,9 +9,7 @@ class Home extends Component {
                 <div>
                     <h1>Chain Bangers</h1>
                 </div>
-                
                 <Link to='/AddCourse'>Add Course</Link>
-                
             </div>
         );
     }
