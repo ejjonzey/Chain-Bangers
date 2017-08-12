@@ -5,10 +5,24 @@ import Home from './components/Home';
 import Course from './components/Course';
 import AddCourse from './components/AddCourse';
 import EditHole from './components/EditHole';
-import Hole from './components/Hole'
+import Hole from './components/Hole';
+import User from './components/User';
 
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      loggedIn: false,
+      userId: "",
+      firstName: ""
+    }
+  }
+
+  _newLogin=(event)=>{
+    event.preventDefault();
+  }
+  
   render() {
     return (
       <Router>
@@ -18,10 +32,11 @@ class App extends Component {
           </div>
           <div>
             <Route exact path="/" component={Home}/>
-            <Route  path="/AddCourse" component={AddCourse}/>
+            <Route path="/AddCourse" component={AddCourse}/>
             <Route path="/Course" component={Course}/>
             <Route path="/EditHole" component={EditHole}/>
             <Route path="/Hole" component={Hole}/>
+            <Route path="/User" component={User}/>
           </div>
         </div>
         </Router>
