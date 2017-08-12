@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import Course from './components/Course';
 import AddCourse from './components/AddCourse';
+import EditHole from './components/EditHole';
 
 
 class App extends Component {
@@ -13,11 +14,12 @@ class App extends Component {
         <div>
           <div>
             <Link to='/'>Home</Link>
-            <Link to='/AddCourse'>Add Course</Link>
           </div>
           <div>
             <Route exact path="/" component={Home}/>
             <Route  path="/AddCourse" component={AddCourse}/>
+            <Route path="/Course" component={Course}/>
+            <Route path="/EditHole" component={EditHole}/>
           </div>
         </div>
         </Router>
