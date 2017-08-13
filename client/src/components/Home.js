@@ -21,8 +21,7 @@ class Home extends Component {
 
         return (
             <div>
-                <h1>Please <Link to="/AddCourse"> add a course</Link> or <Link to="/Course">Check Out the saved courses</Link></h1>
-                <LoginDiv>
+                
                 {this.props.loginError ? <p>{this.props.loginError}</p> : null}
                 <form onSubmit={this.props.handleLogin}>
                     <div>
