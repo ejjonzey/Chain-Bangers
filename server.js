@@ -2,7 +2,8 @@ require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const UserController = require('./controllers/user.jsx');
+const UserController = require('./controllers/user');
+const CourseController = require('./controllers/course');
 const app = express();
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); 
@@ -26,6 +27,7 @@ app.get('/', (req,res) => {
 })
 
 app.use('/api/user', UserController);
+app.use('/api/course', CourseController);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
