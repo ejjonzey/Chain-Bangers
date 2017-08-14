@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-class EditHole extends Component {
+class EditCourse extends Component {
     render() {
         return (
             <div>
                 <div>
-                    <h1>Heelo from Edit Hole</h1>
+                    <h1>Heelo from Edit course</h1>
                 </div>
             </div>
         );
     }
 }
 
-export default EditHole;
+export default EditCourse;

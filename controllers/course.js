@@ -8,16 +8,23 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/Course", (req, res)=>{
+router.post("/", (req, res)=>{
     const name = req.body.name;
     const location = req.body.location;
     const holes = req.body.holes;
     const image = req.body.image;
     const description = req.body.description;
-    Course.find().then((course)=>{
-        res.json(course);
+    const course = new Course();
+    course.name = name;
+    course.location = location;
+    course.holes = holes;
+    course.image = image;
+    course.description = description;
+    course.save().then(()=>{
+        console.log("save new course");
+    })
     });
-});
+
 
 
 module.exports = router;

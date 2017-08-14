@@ -9,7 +9,7 @@ class AddCourse extends Component {
 
   _handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/api/Course", this.state).then((res) => {
+    axios.post("/api/course", this.state).then((res) => {
       console.log("Success!");
     })
     .catch(err => console.log(err));
@@ -40,7 +40,7 @@ class AddCourse extends Component {
                  </label>
                 </form>    
                </div> 
-               <Link to='/EditHole'>Edit Hole</Link>
+               <Link to='/EditCourse'>Edit course</Link>
             </div>
         );
     }

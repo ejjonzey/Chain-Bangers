@@ -30,6 +30,11 @@ _newCourse = () => {
     });
 };
 
+_deleteCourse = ()=>{
+    const newState = {...this.state};
+    this.setState(newState);
+    }
+
 
     render(){
         return (
