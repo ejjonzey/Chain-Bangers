@@ -14,7 +14,7 @@ class Course extends Component {
     }
 
     componentWillMount(){
-        const id = this.props.match.params.userId
+        const id = this.props.match.params.courseId
         axios.get(`/api/course`)
         .then(res=>{
             this.setState({
