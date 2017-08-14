@@ -7,14 +7,13 @@ class Course extends Component {
     constructor(){
         super();
         this.state = {
-            user: {
-                course: []
-            }
+                courses: []
+            
         }
     }
 
     componentWillMount(){
-        const id = this.props.match.params.courseId
+        const id = this.props.match.params.courseId;
         axios.get(`/api/course`)
         .then(res=>{
             this.setState({
@@ -27,7 +26,10 @@ class Course extends Component {
         return (
             <div>
                 <div>
-                <h1>These are your courses: {this.props.course}</h1>
+                <h1>These are your courses: 
+                    <ul>{this.state.courses.map((course, index) => {
+                       return <li>{course.name}</li> })}</ul>
+                    </h1>
                 <br/>
                 <Link to='/AddCourse'>Add Course</Link>
                 </div>
