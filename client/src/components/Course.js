@@ -3,12 +3,12 @@ import {Link}from 'react-router-dom';
 import axios from 'axios';
 
 
+
 class Course extends Component {
     constructor(){
         super();
         this.state = {
-                courses: []
-            
+            courses: []  
         }
     }
 
@@ -22,6 +22,15 @@ class Course extends Component {
             console.log(res.data);
         })
     }
+
+_newCourse = () => {
+    axios.post(`/api/course/${this.state.course}`).then((res)=>{
+        console.log("success")
+        const newState={...this.state}
+    });
+};
+
+
     render(){
         return (
             <div>
