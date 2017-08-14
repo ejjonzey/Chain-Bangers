@@ -23,7 +23,11 @@ router.post("/", (req, res)=>{
     course.save().then(()=>{
         console.log("save new course");
     })
-    });
+});
+
+router.delete('/EditCourse/id', (req, res)=>{
+    console.log("hello from delete")
+})
 
 
 

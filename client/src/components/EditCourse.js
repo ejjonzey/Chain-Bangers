@@ -2,8 +2,25 @@ import React, { Component } from 'react';
 import {Link}from 'react-router-dom';
 import axios from 'axios';
 
-
 class EditCourse extends Component {
+
+    _handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post("/api/course", this.state).then((res) => {
+          console.log("Success!");
+        })
+        .catch(err => console.log(err));
+      };
+
+      _handleDelete = (e) => {
+        e.preventDefault();
+            axios.delete(`/EditCourse/${this.props.EditCourse}`).then((res) => {
+          console.log("Success!");
+        })
+        .catch(err => console.log(err));
+      };
+    
+      
     render() {
         return (
             <div>
@@ -27,10 +44,12 @@ class EditCourse extends Component {
                 <input type="text" name="description" />
                 <input type="submit" value="Submit" />
                  </label>
-                </form>    
+                </form>  
+                <button onClick = {this._handleDelete} type="button" value="delete">Delete</button> 
                </div> 
-               <Link to='/EditCourse'>Edit course</Link>
+               <Link to='/Course'>Save Course</Link>
             </div>
+        
         );
     }
 }
