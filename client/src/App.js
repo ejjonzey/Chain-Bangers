@@ -25,7 +25,6 @@ class App extends Component {
             <Route path="/Course" component={Course}/>
             <Route path="/EditCourse/:courseId" component={EditCourse}/>
             <Route path="/Hole" component={Hole}/>
-            
           </div>
         </div>
         </Router>

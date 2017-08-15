@@ -2,12 +2,21 @@ const express = require('express');
 const Course = require("../models/course");
 const router = express.Router();
 
+// index route
 router.get("/", (req, res) => {
     Course.find().then((course) => {
         res.json(course);
     });
 });
 
+router.get("/:id", (req, res) => {
+    Course.findById(req.params.id).then((course) => {
+        res.json(course);
+    });
+});
+
+
+// POST route
 router.post("/", (req, res)=>{
     const name = req.body.name;
     const location = req.body.location;

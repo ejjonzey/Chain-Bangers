@@ -1,19 +1,56 @@
 import React, { Component } from 'react';
 import {Link}from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { fadeInDown } from 'react-animations';
 
 
 
 class Home extends Component {
     render() {
+
+        const fadeAnimation = keyframes`${fadeInDown}`;
+        
+                const TitleDiv = styled.div`
+                    display: flex;
+                    flex-direction: column;
+                    height: 95vh;
+                    justify-content: center;
+                    align-items: center;
+                    color: red;
+                    background-image: url("https://cdn.discgolf.ultiworld.com/wp-content/uploads/2016/07/Lizotte-Injury.jpg");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    h1{
+                        color: green;
+                        text-align: center;
+                        font-size: 70px;
+                        font-family: "Acme", cursive;
+                    }
+                    a{
+                        color: red;
+                        font-size: 35px;
+                        border-radius: 20px;
+                        text-decoration: none;
+                        background-color: yellow;
+                        opacity: 0.7;
+                        padding: 20px 30px;
+                    }
+                `
+                const FadeInDiv = styled.div`
+                    animation: 2s {fadeAnimation};
+                ` 
+        
         return (
             <div>
-               <div>
-                <h1> Please <Link to ="/AddCourse">Add a Course</Link></h1>
-                </div> or  
-                <div>
-                <h1><Link to="/Course"> Check Out the Saved Courses </Link></h1>
-                </div>
+               <TitleDiv>
+                <FadeInDiv><h1>Welcome To Chain Bangers</h1></FadeInDiv>
+
+                <FadeInDiv><h2><Link to ="/AddCourse">Add a Course</Link></h2></FadeInDiv>
+
+                <FadeInDiv><h2><Link to="/Course"> Check Out the Saved Course</Link></h2></FadeInDiv>
+                
+                </TitleDiv>
             </div>
         );
     }
