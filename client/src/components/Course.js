@@ -30,10 +30,6 @@ _newCourse = () => {
     });
 };
 
-_deleteCourse = ()=>{
-    const newState = {...this.state};
-    this.setState(newState);
-    }
 
 
     render(){
@@ -42,7 +38,7 @@ _deleteCourse = ()=>{
                 <div>
                 <h1>These are your courses: 
                     <ul>{this.state.courses.map((course, index) => {
-                       return <li><Link to={`/EditCourse/${course._id}`}>Edit Course</Link>{course._id}</li> })}</ul>
+                       return <li><Link to={`/EditCourse/${course._id}`}>Edit Course</Link>{course.name}</li> })}</ul>
                     </h1>
                 <br/>
                 <Link to='/AddCourse'>Add Course</Link>

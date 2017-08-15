@@ -14,7 +14,7 @@ class EditCourse extends Component {
 
       _handleDelete = (e) => {
         e.preventDefault();
-            axios.delete(`/EditCourse/${this.props.EditCourse}`).then((res) => {
+            axios.delete("/EditCourse").then((res) => {
           console.log("Success!");
         })
         .catch(err => console.log(err));
@@ -45,7 +45,7 @@ class EditCourse extends Component {
                 <input type="submit" value="Submit" />
                  </label>
                 </form>  
-                <button onClick = {this._handleDelete} type="button" value="delete">Delete</button> 
+                <button onClick = {this._handleDelete}>Delete</button> 
                </div> 
                <Link to='/Course'>Save Course</Link>
             </div>

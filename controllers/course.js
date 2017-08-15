@@ -25,9 +25,13 @@ router.post("/", (req, res)=>{
     })
 });
 
-router.delete('/EditCourse/id', (req, res)=>{
-    console.log("hello from delete")
-})
+router.delete((req, res)=>{
+    course.remove({_id: req.params.course_id}, function(err, course) {
+        if (err)
+        res.send(err);
+        res.json({ message: "Course has been deleted" })
+        })
+        });
 
 
 
