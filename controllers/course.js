@@ -25,13 +25,13 @@ router.post("/", (req, res)=>{
     })
 });
 
-router.delete((req, res)=>{
-    course.remove({_id: req.params.course_id}, function(err, course) {
+router.delete("/:course_id", (req, res)=>{
+    Course.remove({_id: req.params.course_id}, function(err, course) {
         if (err)
         res.send(err);
         res.json({ message: "Course has been deleted" })
-        })
-        });
+    })
+});
 
 
 
