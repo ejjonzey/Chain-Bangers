@@ -13,7 +13,6 @@ class Course extends Component {
     }
 
     componentWillMount(){
-        const id = this.props.match.params.courseId;
         axios.get(`/api/course`)
         .then(res=>{
             this.setState({
@@ -26,7 +25,6 @@ class Course extends Component {
 _newCourse = () => {
     axios.post(`/api/course/${this.state.course}`).then((res)=>{
         console.log("success")
-        const newState={...this.state}
     });
 };
 
