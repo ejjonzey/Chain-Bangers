@@ -24,7 +24,9 @@ class CoursePage extends Component {
     render() {
         return (
             <div>
-               
+               <h1>
+                   hello from course page
+               </h1>
             </div>
         );
     }

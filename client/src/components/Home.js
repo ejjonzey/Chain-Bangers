@@ -17,7 +17,7 @@ class Home extends Component {
                     justify-content: center;
                     align-items: center;
                     color: red;
-                    background-image: url("https://cdn.discgolf.ultiworld.com/wp-content/uploads/2016/07/Lizotte-Injury.jpg");
+                    background-image: url("http://www.innovadiscs.com/wp-content/uploads/2015/06/course-target-featured.jpg");
                     background-repeat: no-repeat;
                     background-attachment: fixed;
                     background-position: center;
@@ -25,7 +25,7 @@ class Home extends Component {
                         color: green;
                         text-align: center;
                         font-size: 70px;
-                        font-family: "Acme", cursive;
+                        font-family: Acme, cursive;
                     }
                     a{
                         color: red;
