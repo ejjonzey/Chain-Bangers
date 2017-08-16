@@ -41,7 +41,7 @@ class EditCourse extends Component {
 
       _handleDelete = (e) => {
         e.preventDefault();
-        const courseId = this.props.match.params.courseId;
+        const courseId = this.state.match.params.courseId;
             axios.delete(`/api/course/${courseId}`).then((res) => {
           console.log("Success!");
         })

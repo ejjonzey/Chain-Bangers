@@ -18,17 +18,19 @@ router.get("/:id", (req, res) => {
 
 // POST route
 router.post("/", (req, res)=>{
-    const name = req.body.name;
-    const location = req.body.location;
-    const holes = req.body.holes;
-    const image = req.body.image;
-    const description = req.body.description;
+    console.log(req.body)
     const course = new Course();
-    course.name = name;
-    course.location = location;
-    course.holes = holes;
-    course.image = image;
-    course.description = description;
+    // const name = req.body.name;
+    // const location = req.body.location;
+    // const holes = req.body.holes;
+    // const image = req.body.image;
+    // const description = req.body.description;
+    course.name = req.body.name;
+    course.location = req.body.location;
+    course.holes = req.body.holes;
+    course.image = req.body.image;
+    course.description = req.body.description;
+    console.log(course)
     course.save().then(()=>{
         console.log("save new course");
     })
