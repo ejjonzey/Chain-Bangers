@@ -55,6 +55,7 @@ class EditCourse extends Component {
                <div>
                    <h1>Edit This Course</h1>
                <form onSubmit={this._handleSubmit}>
+               <button onClick = {this._handleDelete}>Delete</button>
                  <label>
                 Name:
                 <input type="text" name="name" value={this.state.course.name}/>
@@ -73,7 +74,7 @@ class EditCourse extends Component {
                 <input type="submit" value="Submit" />
                  </label>
                 </form>  
-                <button onClick = {this._handleDelete}>Delete</button> 
+                 
                </div> 
                <Link to='/Course'>Save Course</Link>
             </div>

@@ -7,16 +7,27 @@ class CoursePage extends Component {
     constructor(){
         super();
         this.state = {
-            course:{}
+            course:{
+                name: "",
+                location: "",
+                holes: "",
+                image: "",
+                description: ""
+            }
         }
     }
 
     componentWillMount(){
-        const id = this.props.match.params.courseId;
-        axios.get(`/api/course/${id}`)
+        const courseId = this.props.match.params.courseId;
+        axios.get(`/api/course/${courseId}`)
         .then(res=>{
             this.setState({
-                course: res.data
+                course: res.data.course,
+                name: res.data.name,
+                location: res.data.location,
+                hole: res.data.holes,
+                image: res.data.image,
+                description: res.data.description
             });
             console.log(res.data);
         })
@@ -27,9 +38,11 @@ class CoursePage extends Component {
             <div>
                <h1>
               <div>
-                <Link to={`/EditCourse/${this.props.match.params.courseId}`}>Edit Course{this.props.match.params.courseId}</Link>
-              </div> })}
+                <h3>{this.state.name}</h3>  
+              </div>
                </h1>
+               <Link to={`/EditCourse/${this.props.courseId}`}>Edit Course{this.props.match.params.courseId}</Link>
+
             </div>
         );
     }
