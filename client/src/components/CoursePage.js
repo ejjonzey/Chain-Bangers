@@ -12,7 +12,8 @@ class CoursePage extends Component {
     }
 
     componentWillMount(){
-        axios.get(`/api/course/${this.props.match.params.courseId}`)
+        const id = this.props.match.params.courseId;
+        axios.get(`/api/course/${id}`)
         .then(res=>{
             this.setState({
                 course: res.data
@@ -25,7 +26,9 @@ class CoursePage extends Component {
         return (
             <div>
                <h1>
-                   hello from course page
+              <div>
+                <Link to={`/EditCourse/${this.props.match.params.courseId}`}>Edit Course{this.props.match.params.courseId}</Link>
+              </div> })}
                </h1>
             </div>
         );

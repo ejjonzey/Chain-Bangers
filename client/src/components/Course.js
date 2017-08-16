@@ -37,7 +37,7 @@ _newCourse = () => {
                 <h1>These are your courses: 
                     <div>
                     <ul>{this.state.courses.map((course, index) => {
-                       return <Link to='/Course'><li key ={index}>{course.name}</li> </Link>})}</ul>
+                       return <Link to='/CourseId/${courseId}'><li key ={index}>{course.name}</li> </Link>})}</ul>
                        </div>
                     </h1>
                 <br/>
