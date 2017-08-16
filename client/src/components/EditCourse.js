@@ -29,11 +29,6 @@ class EditCourse extends Component {
         })
     }
 
-    _handleInputChange = (event)=>{
-        const attribute = event.target.name;
-        let value = event.target.value;
-    }
-
     
     
     _handleSubmit = (e) => {

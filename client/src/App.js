@@ -6,6 +6,7 @@ import Course from './components/Course';
 import AddCourse from './components/AddCourse';
 import EditCourse from './components/EditCourse';
 import Hole from './components/Hole';
+import CoursePage from './components/CoursePage';
 
 
 
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route path="/AddCourse" component={AddCourse}/>
             <Route path="/Course" component={Course}/>
+            <Route path="/CoursePage/:courseId" component={CoursePage}/>
             <Route path="/EditCourse/:courseId" component={EditCourse}/>
             <Route path="/Hole" component={Hole}/>
           </div>
