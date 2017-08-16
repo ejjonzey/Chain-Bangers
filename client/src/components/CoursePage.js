@@ -38,10 +38,14 @@ class CoursePage extends Component {
             <div>
                <h1>
               <div>
-                <h3>{this.state.name}</h3>  
+                <h3>{this.state.name}</h3>
+                <h3>{this.state.location}</h3>
+                <h3>{this.state.holes}</h3>
+                <h3>{this.state.image}</h3>
+                <h3>{this.state.description}</h3>  
               </div>
                </h1>
-               <Link to={`/EditCourse/${this.props.courseId}`}>Edit Course{this.props.match.params.courseId}</Link>
+               <Link to={`/EditCourse/${this.props.match.params.courseId}`}>Edit Course</Link>
 
             </div>
         );
