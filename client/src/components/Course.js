@@ -31,13 +31,16 @@ _newCourse = () => {
 
 
     render(){
+        
         return (
             <div>
                 <div>
                 <h1>These are your courses: 
                     <div>
-                    <ul>{this.state.courses.map((course, index) => {
-                       return <Link to={`/CoursePage/${course._id}`}><li key ={index}>{course.name}</li> </Link>})}</ul>
+                        <div>
+                    {this.state.courses.map((course, index) => {
+                       return <Link to={`/CoursePage/${course._id}`}><li key ={index}>{course.name}</li> </Link>})}
+                       </div>
                        </div>
                     </h1>
                 <br/>

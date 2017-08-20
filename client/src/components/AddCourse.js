@@ -42,24 +42,24 @@ class AddCourse extends Component {
                <div>
                    <h1>Add A Course</h1>
                <form onSubmit={this._handleSubmit}>
-                 <label>
-                Name:
-                <input type="text" name="name" onChange={this._handleChange} value={this.state.course.name}/>
-                <br/>
-                Location:
-                <input type="text" name="location" onChange={this._handleChange} value={this.state.course.location}/>
-                <br/>
-                Holes:
-                <input type="text" name="holes" onChange={this._handleChange} value={this.state.course.holes}/>
-                <br/>
-                Image:
-                <input type="text" name="image" onChange={this._handleChange} value={this.state.course.image}/>
-                <br/>
-                description:
-                <input type="text" name="description"onChange={this._handleChange} value={this.state.course.description} />
-                <input type="submit" value="Submit" />
-                 </label>
-                </form>    
+               <label>
+              Name:
+              <input type="text" name="name" onChange={this._handleChange} value={this.state.course.name}/>
+              <br/>
+              Location:
+              <input type="text" name="location" onChange={this._handleChange} value={this.state.course.location}/>
+              <br/>
+              Holes:
+              <input type="text" name="holes" onChange={this._handleChange} value={this.state.course.holes}/>
+              <br/>
+              Image:
+              <input type="text" name="image" onChange={this._handleChange} value={this.state.course.image}/>
+              <br/>
+              description:
+              <input type="text" name="description"onChange={this._handleChange} value={this.state.course.description} />
+              <input type="submit" value="Submit" />
+               </label>
+              </form>    
                </div> 
                <Link to='/EditCourse'>Edit course</Link>
             </div>

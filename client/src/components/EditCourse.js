@@ -16,8 +16,7 @@ class EditCourse extends Component {
             },
         };
     }
-   
-    
+
     componentWillMount(){
         const courseId = this.props.match.params.courseId;
         axios.get(`/api/course/${courseId}`)
@@ -28,6 +27,16 @@ class EditCourse extends Component {
             console.log(res.data);
         })
     }
+
+    _handleChange =(event)=>{
+        const attributeName = event.target.name;
+        const attributeValue = event.target.value;
+        const course = {...this.state.course};
+        course[attributeName] = attributeValue;
+   
+        this.setState({course})
+    }
+    
 
     
     
@@ -41,8 +50,7 @@ class EditCourse extends Component {
 
       _handleDelete = (e) => {
         e.preventDefault();
-        const courseId = this.state.match.params.courseId;
-            axios.delete(`/api/course/${courseId}`).then((res) => {
+            axios.delete(`/api/course/${this.state.match.params.course_id}`).then((res) => {
           console.log("Success!");
         })
         .catch(err => console.log(err));
@@ -55,28 +63,28 @@ class EditCourse extends Component {
                <div>
                    <h1>Edit This Course</h1>
                <form onSubmit={this._handleSubmit}>
-               <button onClick = {this._handleDelete}>Delete</button>
-                 <label>
-                Name:
-                <input type="text" name="name" value={this.state.course.name}/>
-                <br/>
-                Location:
-                <input type="text" name="location" value={this.state.course.location}/>
-                <br/>
-                Holes:
-                <input type="text" name="holes" value={this.state.course.holes}/>
-                <br/>
-                Image:
-                <input type="text" name="image" value={this.state.course.image}/>
-                <br/>
-                description:
-                <input type="text" name="description" value={this.state.course.description}/>
-                <input type="submit" value="Submit" />
-                 </label>
-                </form>  
+               <label>
+              Name:
+              <input type="text" name="name" onChange={this._handleChange} value={this.state.course.name}/>
+              <br/>
+              Location:
+              <input type="text" name="location" onChange={this._handleChange} value={this.state.course.location}/>
+              <br/>
+              Holes:
+              <input type="text" name="holes" onChange={this._handleChange} value={this.state.course.holes}/>
+              <br/>
+              Image:
+              <input type="text" name="image" onChange={this._handleChange} value={this.state.course.image}/>
+              <br/>
+              description:
+              <input type="text" name="description"onChange={this._handleChange} value={this.state.course.description} />
+              <input type="submit" value="Submit" />
+               </label>
+              </form>    
                  
                </div> 
                <Link to='/Course'>Save Course</Link>
+               <button onClick = {this._handleDelete}>Delete</button>
             </div>
         
         );

@@ -3,6 +3,7 @@ import {Link}from 'react-router-dom';
 import axios from 'axios';
 
 
+
 class CoursePage extends Component {
     constructor(){
         super();
@@ -20,7 +21,7 @@ class CoursePage extends Component {
     componentWillMount(){
         const courseId = this.props.match.params.courseId;
         axios.get(`/api/course/${courseId}`)
-        .then(res=>{
+        .then((res)=>{
             this.setState({
                 course: res.data.course,
                 name: res.data.name,

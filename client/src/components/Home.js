@@ -22,7 +22,7 @@ class Home extends Component {
                     background-attachment: fixed;
                     background-position: center;
                     h1{
-                        color: green;
+                        color: blue;
                         text-align: center;
                         font-size: 70px;
                         font-family: Acme, cursive;
