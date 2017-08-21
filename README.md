@@ -30,3 +30,8 @@ For my first full stack MERN project I attempted to create a disc golf course tr
 - Add a user controller to allow individual control over databases.  
 - Allow users to edit courses.
 - Allow users to add holes to courses.
+
+# User Stories
+
+In user stories file.
+
