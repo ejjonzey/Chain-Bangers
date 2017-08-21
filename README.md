@@ -35,3 +35,4 @@ For my first full stack MERN project I attempted to create a disc golf course tr
 
 In user stories file.
 
+# Wireframs and ERD are in the images file.
