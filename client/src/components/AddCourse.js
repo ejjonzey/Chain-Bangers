@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link}from 'react-router-dom';
+import {Link, Redirect}from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -8,6 +8,7 @@ class AddCourse extends Component {
   constructor(){
     super();
     this.state = {
+      redirect: false,
     course: {
       name: "",
       location: "",
@@ -22,6 +23,7 @@ class AddCourse extends Component {
     e.preventDefault();
     axios.post("/api/course", this.state.course).then((res) => {
       console.log("Success!");
+      this.setState({redirect:true})
     })
     .catch(err => console.log(err));
   };
@@ -37,6 +39,9 @@ class AddCourse extends Component {
 
 
     render() {
+      if (this.state.redirect){
+        return <Redirect to='/Course'/>
+      } else
         return (
             <div>
                <div>
@@ -57,7 +62,7 @@ class AddCourse extends Component {
               <br/>
               description:
               <input type="text" name="description"onChange={this._handleChange} value={this.state.course.description} />
-              <input type="submit" value="Submit" />
+              <button type="submit" value="Submit">Submit</button>
                </label>
               </form>    
                </div> 

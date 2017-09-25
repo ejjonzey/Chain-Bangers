@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link}from 'react-router-dom';
+import {Link, Redirect}from 'react-router-dom';
 import axios from 'axios';
 
 class EditCourse extends Component {
@@ -7,6 +7,7 @@ class EditCourse extends Component {
     constructor(){
         super();
         this.state= {
+            redirect: false,
             course:{
                 name: "",
                 location: "",
@@ -42,8 +43,10 @@ class EditCourse extends Component {
     
     _handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("/api/Course", this.state).then((res) => {
+        console.log(e.target.name.value)
+        axios.put(`/api/course/${this.props.match.params.courseId}`, this.state.course).then((res) => {
           console.log("Success from submit");
+          this.setState({redirect:true})          
         })
         .catch(err => console.log(err));
       };
@@ -58,6 +61,9 @@ class EditCourse extends Component {
     
       
     render() {
+        if (this.state.redirect){
+            return <Redirect to='/Course/:id'/>
+          } else
         return (
             <div>
                <div>
@@ -83,7 +89,7 @@ class EditCourse extends Component {
               </form>    
                  
                </div> 
-               <Link to='/Course'>Save Course</Link>
+               <Link to='/Course/:id'>Save Course</Link>
                <button onClick = {this._handleDelete}>Delete</button>
             </div>
         

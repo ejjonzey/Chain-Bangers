@@ -26,7 +26,7 @@ class CoursePage extends Component {
                 course: res.data.course,
                 name: res.data.name,
                 location: res.data.location,
-                hole: res.data.holes,
+                holes: res.data.holes,
                 image: res.data.image,
                 description: res.data.description
             });

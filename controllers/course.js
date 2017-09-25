@@ -15,6 +15,25 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.put('/:courseId', (req, res)=>{
+    console.log(req.body.name);
+  const courseId = req.params.courseId;
+  Course.findById(courseId).then((course)=>{
+      ///Have a course
+
+      //Take info from req.body and update existing course
+      course.name = req.body.name;
+      course.location = req.body.location;
+      course.holes = req.body.holes;
+      course.image = req.body.image;
+      course.description = req.body.description;
+      //Save updated course
+    //   Course.push({courseId: course})
+      course.save();
+      res.send("course saved");
+  })  
+})
+
 
 // POST route
 router.post("/", (req, res)=>{
@@ -32,7 +51,7 @@ router.post("/", (req, res)=>{
     course.description = req.body.description;
     console.log(course)
     course.save().then(()=>{
-        console.log("save new course");
+    res.json(course);
     })
 });
 
