@@ -53,7 +53,8 @@ class EditCourse extends Component {
 
       _handleDelete = (e) => {
         e.preventDefault();
-            axios.delete(`/api/course/${this.state.match.params.course_id}`).then((res) => {
+            axios.delete(`/api/course/${this.props.match.params.courseId}`).then((res) => {
+                this.setState({redirect:true})                          
           console.log("Success!");
         })
         .catch(err => console.log(err));
